@@ -12,7 +12,9 @@ interface Props {
   id?: string
 }
 
-const initial: Record<string, object> = {
+type Dir = { opacity: number; x?: number; y?: number }
+
+const initial: Record<string, Dir> = {
   up:    { opacity: 0, y: 36 },
   left:  { opacity: 0, x: -36 },
   right: { opacity: 0, x: 36 },
