@@ -172,9 +172,15 @@ export default function Footer() {
           <p className="font-body text-white/30 text-xs">
             © {new Date().getFullYear()} KODBE Travel & Tours. Tous droits réservés.
           </p>
-          <p className="font-body text-white/20 text-xs">
-            Quartier Goudji, N'Djaména — République du Tchad
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="font-body text-white/20 text-xs">
+              Quartier Goudji, N'Djaména — République du Tchad
+            </p>
+            <Link href="/mentions-legales"
+              className="font-body text-white/25 text-xs hover:text-white/60 transition-colors">
+              Mentions légales
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
