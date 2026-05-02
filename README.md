@@ -9,7 +9,7 @@ Site web professionnel pour **KODBE Travel & Tours**, agence de voyage basée à
 - **Adresse** : Quartier Goudji, N'Djaména - Tchad
 - **Téléphone Tchad** : +235 66 21 48 22
 - **Téléphone Tunisie** : +216 53 63 48 15
-- **Email** : Kodbetravel@gmail.com
+- **Email** : travelkodbe@gmail.com
 
 ---
 
@@ -112,7 +112,7 @@ export const agencyInfo = {
   address: 'Quartier Goudji, N\'Djaména - Tchad',
   phoneTchad: '+235 66 21 48 22',
   phoneTunisie: '+216 53 63 48 15',
-  email: 'Kodbetravel@gmail.com',
+  email: 'travelkodbe@gmail.com',
   // ...
 }
 ```

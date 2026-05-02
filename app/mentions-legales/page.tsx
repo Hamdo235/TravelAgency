@@ -34,8 +34,8 @@ export default function MentionsLegalesPage() {
               <li><strong>Téléphone (Tchad) :</strong> +235 66 21 48 22</li>
               <li><strong>Téléphone (Tunisie) :</strong> +216 53 63 48 15</li>
               <li><strong>Email :</strong>{' '}
-                <a href="mailto:Kodbetravel@gmail.com"
-                  className="text-teal hover:underline">Kodbetravel@gmail.com</a>
+                <a href="mailto:travelkodbe@gmail.com"
+                  className="text-teal hover:underline">travelkodbe@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -77,8 +77,8 @@ export default function MentionsLegalesPage() {
             <p className="mb-3">
               Conformément aux lois en vigueur sur la protection des données, vous disposez d'un droit d'accès,
               de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à :{' '}
-              <a href="mailto:Kodbetravel@gmail.com" className="text-teal hover:underline">
-                Kodbetravel@gmail.com
+              <a href="mailto:travelkodbe@gmail.com" className="text-teal hover:underline">
+                travelkodbe@gmail.com
               </a>
             </p>
             <p>

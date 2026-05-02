@@ -8,7 +8,7 @@ export const agencyInfo = {
   phoneTunisie: '+216 53 63 48 15',
   whatsappTchad: '0023566214822',
   whatsappTunisie: '0021653634815',
-  email: 'Kodbetravel@gmail.com',
+  email: 'travelkodbe@gmail.com',
   foundedYear: 2018,
   description:
     'KODBE Travel & Tours est une agence de voyage tchadienne basée à N\'Djaména, spécialisée dans la billetterie aérienne, les visas, la réservation d\'hôtels, le Hadj & l\'Omra, l\'évacuation sanitaire et la location de véhicules. Avec un réseau couvrant l\'Afrique, le Moyen-Orient et l\'Europe, nous vous offrons un service complet et sur-mesure.',
