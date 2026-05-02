@@ -1,7 +1,22 @@
 import type { Metadata, Viewport } from 'next'
+import { Montserrat, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -38,11 +53,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
-      <body className="bg-white text-slate-800 antialiased">
+      <body className={`${montserrat.variable} ${inter.variable} bg-white text-slate-800 antialiased`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
