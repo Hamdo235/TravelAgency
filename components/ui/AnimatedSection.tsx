@@ -9,6 +9,7 @@ interface Props {
   delay?: number
   direction?: 'up' | 'left' | 'right' | 'none'
   once?: boolean
+  id?: string
 }
 
 const initial: Record<string, object> = {
@@ -19,13 +20,14 @@ const initial: Record<string, object> = {
 }
 
 export default function AnimatedSection({
-  children, className, delay = 0, direction = 'up', once = true,
+  children, className, delay = 0, direction = 'up', once = true, id,
 }: Props) {
   const ref = useRef(null)
   const inView = useInView(ref, { once, margin: '0px 0px -70px 0px' })
 
   return (
     <motion.div
+      id={id}
       ref={ref}
       initial={initial[direction]}
       animate={inView ? { opacity: 1, x: 0, y: 0 } : initial[direction]}
