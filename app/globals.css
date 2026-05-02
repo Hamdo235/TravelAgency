@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Design Tokens ─────────────────────────────────── */
+:root {
+  --brand:        #0f2d6b;
+  --brand-dark:   #08193f;
+  --brand-mid:    #1a4bba;
+  --brand-light:  #2563eb;
+  --teal:         #0891b2;
+  --teal-light:   #06b6d4;
+  --amber:        #d97706;
+  --amber-light:  #f59e0b;
+  --sky:          #f0f7ff;
+  --white:        #ffffff;
+  --text:         #1e293b;
+  --text-muted:   #64748b;
+
+  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-body:    'Inter',      system-ui, sans-serif;
+  --radius-card:  1.25rem;
+}
+
+/* ─── Base ──────────────────────────────────────────────── */
+@layer base {
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: #ffffff;
+    overflow-x: hidden;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background: var(--teal-light);
+    color: white;
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--sky); }
+  ::-webkit-scrollbar-thumb { background: var(--brand-mid); border-radius: 4px; }
+}
+
+/* ─── Components ─────────────────────────────────────────── */
+@layer components {
+
+  /* BUTTONS */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-display font-600 text-sm tracking-wide rounded-full transition-all duration-300 cursor-pointer;
+  }
+  .btn-primary {
+    @apply btn px-7 py-3.5 bg-amber-light text-brand-dark;
+    box-shadow: 0 4px 18px rgba(245, 158, 11, 0.35);
+  }
+  .btn-primary:hover {
+    @apply scale-105 brightness-110;
+    box-shadow: 0 8px 28px rgba(245, 158, 11, 0.5);
+  }
+  .btn-brand {
+    @apply btn px-7 py-3.5 text-white;
+    background: linear-gradient(135deg, var(--brand-mid), var(--teal));
+    box-shadow: 0 4px 18px rgba(26, 75, 186, 0.35);
+  }
+  .btn-brand:hover { @apply scale-105; filter: brightness(1.12); }
+
+  .btn-outline {
+    @apply btn px-7 py-3.5 border-2 border-white/30 text-white;
+    backdrop-filter: blur(8px);
+  }
+  .btn-outline:hover { @apply border-amber-light text-amber-light scale-105; }
+
+  .btn-white {
+    @apply btn px-7 py-3.5 bg-white text-brand;
+    box-shadow: 0 4px 14px rgba(0,0,0,.12);
+  }
+  .btn-white:hover { @apply scale-105; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+
+  /* SECTION LABEL */
+  .section-tag {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-display font-700 tracking-wider uppercase;
+    background: rgba(8, 145, 178, 0.12);
+    color: var(--teal);
+    border: 1px solid rgba(8, 145, 178, 0.25);
+  }
+
+  /* CARDS */
+  .card {
+    @apply bg-white rounded-[var(--radius-card)] border border-slate-100 transition-all duration-400;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(15, 45, 107, 0.10);
+  }
+
+  /* SERVICE ICON BOX */
+  .icon-box {
+    @apply w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300;
+    background: linear-gradient(135deg, rgba(26,75,186,.1), rgba(8,145,178,.1));
+  }
+  .icon-box svg { color: var(--brand-mid); }
+
+  /* GRADIENT TEXT */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--teal-light), var(--brand-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* FORM */
+  .form-field {
+    @apply w-full bg-sky border border-slate-200 text-slate-800 font-body text-sm px-5 py-3.5 rounded-xl focus:outline-none focus:border-brand-mid transition-colors placeholder:text-slate-400;
+  }
+  .form-label {
+    @apply block text-slate-700 font-body text-sm font-500 mb-1.5;
+  }
+
+  /* GLASS */
+  .glass {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* PARTNER BADGE */
+  .partner-badge {
+    @apply flex flex-col items-center gap-2 p-4 rounded-2xl text-center transition-all duration-300;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .partner-badge:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
+}
+
+@layer utilities {
+  .font-500 { font-weight: 500; }
+  .font-600 { font-weight: 600; }
+  .font-700 { font-weight: 700; }
+  .font-800 { font-weight: 800; }
+  .font-900 { font-weight: 900; }
+  .duration-400 { transition-duration: 400ms; }
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+.page-in { animation: pageIn 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero diagonal shape */
+.hero-clip { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+
+/* Airline logo row */
+.airline-strip {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.10);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
