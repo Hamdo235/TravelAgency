@@ -33,12 +33,18 @@ export default function ContactPage() {
     setLoading(true)
     setError('')
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: 'a1bbc3bd-876b-4442-8865-ad805ffd6193',
+          subject: `Nouvelle demande : ${form.service} — ${form.name}`,
+          from_name: 'KODBE Travel Website',
+          ...form,
+        }),
       })
-      if (!res.ok) throw new Error()
+      const data = await res.json()
+      if (!data.success) throw new Error()
       setSent(true)
     } catch {
       setError('Une erreur est survenue. Contactez-nous directement par WhatsApp ou téléphone.')
